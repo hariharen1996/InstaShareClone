@@ -101,11 +101,11 @@ class MyProfileDataRoute extends Component {
               )}
 
               <hr className="line profile-line" />
-              <div className="user-posts-heading">
+              <div className="user-posts-heading myprofile-head">
                 <BsGrid3X3 className={`posts-icon ${textColor}`} />
                 <h1 className={`posts-heading ${textColor}`}>Posts</h1>
               </div>
-              <div className="user-posts-card">
+              <div className="user-posts-card my-profile-card">
                 {posts.length !== 0 ? (
                   <ul className="user-card-items">
                     {posts.map(postImages => (

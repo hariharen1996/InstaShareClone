@@ -215,6 +215,13 @@
   }
 }
 
+@media screen and (max-width: 350px) {
+  .user-posts-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .user-heading-lg {
     display: none;
@@ -281,5 +288,23 @@
   }
   .user-bio-text {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .user-profile-text {
+    font-size: 9px;
+  }
+  .user-profile-posts-text {
+    font-size: 9px;
+  }
+  .user-profile-heading {
+    font-size: 13px;
+  }
+  .sub-username {
+    font-size: 10px;
+  }
+  .user-bio-text {
+    font-size: 10px;
   }
 }

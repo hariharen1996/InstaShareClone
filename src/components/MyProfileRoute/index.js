@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
@@ -60,7 +61,7 @@ class MyProfileRoute extends Component {
   myProfileDataSuccess = () => {
     const {myProfileData} = this.state
     return (
-      <div>
+      <div className="profile-data">
         <ul className="myprofile-container">
           <MyProfileDataRoute
             myProfileData={myProfileData}
@@ -73,8 +74,10 @@ class MyProfileRoute extends Component {
 
   myProfileDataLoading = () => (
     // eslint-disable-next-line react/no-unknown-property
-    <div className="profile-loader-container" testid="loader">
-      <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
+    <div className="profile-loader-container">
+      <div testid="loader">
+        <Loader type="TailSpin" color="#4094EF" height={50} width={50} />
+      </div>
     </div>
   )
 
