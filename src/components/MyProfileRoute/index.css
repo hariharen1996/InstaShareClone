@@ -1,0 +1,44 @@
+.btnDark {
+  background-color: #262626;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.btnLight {
+  background-color: #4094ef;
+  color: #ffffff;
+  border: none;
+}
+
+.myprofile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 25px;
+}
+
+.myprofile {
+  display: flex;
+  padding-left: 30px;
+}
+
+@media screen and (min-width: 1100px) {
+  .myprofile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .myprofile-container {
+    height: 95vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0px;
+    margin-top: 25px;
+  }
+}
