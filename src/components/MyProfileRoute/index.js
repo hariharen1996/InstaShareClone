@@ -61,14 +61,12 @@ class MyProfileRoute extends Component {
   myProfileDataSuccess = () => {
     const {myProfileData} = this.state
     return (
-      <div className="profile-data">
-        <ul className="myprofile-container">
-          <MyProfileDataRoute
-            myProfileData={myProfileData}
-            key={myProfileData.id}
-          />
-        </ul>
-      </div>
+      <ul className="myprofile-container">
+        <MyProfileDataRoute
+          myProfileData={myProfileData}
+          key={myProfileData.id}
+        />
+      </ul>
     )
   }
 
@@ -129,7 +127,7 @@ class MyProfileRoute extends Component {
     return (
       <>
         <HeaderRoute />
-        <div className="myprofile">{this.myProfileStatus()}</div>
+        <div className="users-profile">{this.myProfileStatus()}</div>
       </>
     )
   }

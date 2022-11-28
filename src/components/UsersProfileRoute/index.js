@@ -66,11 +66,9 @@ class UsersProfileRoute extends Component {
     const {usersData} = this.state
     console.log(usersData)
     return (
-      <div>
-        <div className="profile-container">
-          <UsersRoute usersData={usersData} key={usersData.id} />
-        </div>
-      </div>
+      <ul className="profile-container">
+        <UsersRoute usersData={usersData} key={usersData.id} />
+      </ul>
     )
   }
 

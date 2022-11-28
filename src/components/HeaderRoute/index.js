@@ -35,10 +35,22 @@ class HeaderRoute extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {showTheme, themeChange} = value
+          const {showTheme, themeChange, changeTabs, activeTabs} = value
 
           const onThemeChange = () => {
             themeChange()
+          }
+
+          const changeHome = () => {
+            changeTabs('home')
+          }
+
+          const changeProfile = () => {
+            changeTabs('profile')
+          }
+
+          const changeSearch = () => {
+            changeTabs('search')
           }
 
           const bgColor = showTheme ? 'bg-dark' : 'bg-light'
@@ -95,13 +107,29 @@ class HeaderRoute extends Component {
                     </div>
                   </li>
                   <Link to="/" className="nav-links">
-                    <li className="nav-lists-lg">
-                      <p className={`nav-text nav-active ${textColor}`}>Home</p>
+                    <li className="nav-lists-lg" onClick={changeHome}>
+                      <p
+                        className={
+                          activeTabs === 'home'
+                            ? `nav-text active ${textColor}`
+                            : `nav-text ${textColor}`
+                        }
+                      >
+                        Home
+                      </p>
                     </li>
                   </Link>
                   <Link to="/my-profile" className="nav-links">
-                    <li className="nav-lists-lg">
-                      <p className={`nav-text ${textColor}`}>Profile</p>
+                    <li className="nav-lists-lg" onClick={changeProfile}>
+                      <p
+                        className={
+                          activeTabs === 'profile'
+                            ? `nav-text active ${textColor}`
+                            : `nav-text ${textColor}`
+                        }
+                      >
+                        Profile
+                      </p>
                     </li>
                   </Link>
                   <li className="nav-lists-lg">
@@ -129,24 +157,46 @@ class HeaderRoute extends Component {
                 <div className="nav-container-sm">
                   <ul className="nav-lists-sm">
                     <Link to="/" className="nav-links">
-                      <li className="nav-items-sm">
-                        <p className={`nav-text ${textColor}`}>Home</p>
+                      <li className="nav-items-sm" onClick={changeHome}>
+                        <p
+                          className={
+                            activeTabs === 'home'
+                              ? `nav-text active ${textColor}`
+                              : `nav-text ${textColor}`
+                          }
+                        >
+                          Home
+                        </p>
                       </li>
                     </Link>
-                    <li className="nav-items-sm">
+                    <li className="nav-items-sm" onClick={changeSearch}>
                       <button
                         type="button"
                         className="search-btn"
                         onClick={this.onShowSearch}
                       >
-                        <p className={`nav-text nav-active ${textColor}`}>
+                        <p
+                          className={
+                            activeTabs === 'search'
+                              ? `nav-text active ${textColor}`
+                              : `nav-text ${textColor}`
+                          }
+                        >
                           Search
                         </p>
                       </button>
                     </li>
                     <Link to="/my-profile" className="nav-links">
-                      <li className="nav-items-sm">
-                        <p className={`nav-text ${textColor}`}>Profile</p>
+                      <li className="nav-items-sm" onClick={changeProfile}>
+                        <p
+                          className={
+                            activeTabs === 'profile'
+                              ? `nav-text active ${textColor}`
+                              : `nav-text ${textColor}`
+                          }
+                        >
+                          Profile
+                        </p>
                       </li>
                     </Link>
                     <li className="nav-items-sm">

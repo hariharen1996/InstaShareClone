@@ -10,7 +10,11 @@ import NotFoundRoute from './components/NotFoundRoute'
 import ThemeContext from './context/ThemeContext'
 
 class App extends Component {
-  state = {showTheme: false}
+  state = {showTheme: false, activeTabs: 'home'}
+
+  changeTabs = tabs => {
+    this.setState({activeTabs: tabs})
+  }
 
   themeChange = () => {
     this.setState(prevState => ({
@@ -19,12 +23,17 @@ class App extends Component {
   }
 
   render() {
-    const {showTheme} = this.state
+    const {showTheme, activeTabs} = this.state
     const bodyColor = showTheme ? 'bodyBg-dark' : 'bodyBg-light'
     return (
       <div className={bodyColor}>
         <ThemeContext.Provider
-          value={{showTheme, themeChange: this.themeChange}}
+          value={{
+            showTheme,
+            themeChange: this.themeChange,
+            activeTabs,
+            changeTabs: this.changeTabs,
+          }}
         >
           <Switch>
             <Route exact path="/login" component={LoginRoute} />

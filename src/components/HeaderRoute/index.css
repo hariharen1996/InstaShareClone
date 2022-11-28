@@ -75,10 +75,14 @@
   font-weight: 500;
 }
 
-.nav-text:hover {
+.nav-text.active {
+  color: #4094ef;
+}
+
+/* .nav-text:hover {
   color: #4094ef;
   transition: 0.4s ease;
-}
+} */
 
 .nav-items-lg {
   display: flex;
